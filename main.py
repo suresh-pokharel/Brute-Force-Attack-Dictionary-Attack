@@ -10,17 +10,14 @@ import itertools
 
 class SecurityAttack:
     def __init__(self):
-        self.password_length = 5
-        self.true_username = "adm"
-        self.true_password = "adm"
+        self.true_username = "admin"
+        self.true_password = "admin"
 
     def authenticate(self, username, password):
         # compare username and password with their true values
         if (username == self.true_username) and (password == self.true_password):
-            print("Success")
             return 1
         else:
-            print("Failed")
             return 0
 
     def iterator(self,length_of_string, alphabets):
@@ -39,10 +36,37 @@ class SecurityAttack:
     def brute_force(self, string_set):
         for username in string_set:  # loop to find username
             for password in string_set:  # loop to find username
-                print('Username: ', username)
-                print('Password: ', password)
+                print('Testing For username: ', username, 'and password: ', password)
+
+                # supply username and password
+                # instead of supplying data to authenticate function, you can call api and check the response
+                # your ip may get blocked for sending excessive request
+
+                success = self.authenticate(username, password)
+
+                if success:
+                    print("------------------------------------")
+                    print("Username: ", username)
+                    print("Password: ", password)
+                    break
+
+    def dictionary_attack(self):
+        # sample of dictionary words are used for testing
+        dictionary_words = ['apple', 'orange', 'cat', 'mouse', 'admin', 'user']
+
+        # consider we know the username so, we are supplying password as dictionary words
+        username = 'admin'
+        for password in dictionary_words:
+            print('Testing For username: ', username, 'and password: ', password)
+            success = self.authenticate(username, password)
+            if success:
+                print("------------------------------------")
+                print("Username: ", username)
+                print("Password: ", password)
+                break
 
 
+# create object of Security Attack
 obj = SecurityAttack()
 
 # assuming string contains small letters and few symbols only
@@ -50,14 +74,12 @@ obj = SecurityAttack()
 alphabets = 'abcdefghijklmnopqrstuvwxyz+@#$%^&'
 
 # what is the length of string? Eg. abc, cab, xys are of length 3
-string_length = 1
+string_length = 5
 
 # get all possible string set ie. (no. of possible characters)^string_length
 string_set = obj.generate_strings(string_length, alphabets)
-
-print("Number of possible combinations: ", len(string_set))
-print(string_set)
 print("Number of possible combinations: ", len(string_set))
 
 obj.brute_force(string_set)
+# obj.dictionary_attack()
 
