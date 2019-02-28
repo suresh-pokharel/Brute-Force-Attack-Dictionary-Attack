@@ -10,36 +10,31 @@ def encrypt(text, k):
 
         # encipher the character
         temp = (temp + k) % 26
-
         # convert ascii to character
-        cipher.append(chr(temp))
+        cipher.append(chr(temp+96))
 
     return cipher
 
 
 def decrypt(text, k):
     plaintext = []
-    for character in text:
-
+    for number in text:
         # decipher the code
-        character = (character - k)
-
+        character = (ord(number)-96 - k) % 26
 
         # convert character to ascii
-        temp = ord(character+96)   # Assuming message is in lowercases
-
-
+        temp = chr(character+96)   # Assuming message is in lowercases
 
         # convert ascii to character
-        plaintext.append(chr(temp))
+        plaintext.append(temp)
 
     return plaintext
 
 
-original_text = "a"
+original_text = "hellopassworld"
 
 # k is number of characters to shift i.e. If k=1, A->B
-k = 0
+k = 1
 print("Original message: ", original_text)
 
 # encrypt
@@ -52,4 +47,3 @@ plaintext = decrypt(cipher, k)
 # join characters to make string
 plaintext = "".join(plaintext)
 print("Decrypted message: ", plaintext)
-
