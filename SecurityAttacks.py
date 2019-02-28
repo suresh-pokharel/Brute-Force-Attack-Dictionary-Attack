@@ -51,6 +51,13 @@ class SecurityAttack:
                     break
 
     def dictionary_attack(self):
+
+        # load dictionary from text file , this takes long to load so used small set, uncomment to check
+        # dictionary_words = []
+        # f = open("data/words.txt", "r").read().split('\n')
+        # for x in f:
+        #     dictionary_words.append(x)
+
         # sample of dictionary words are used for testing
         dictionary_words = ['apple', 'orange', 'cat', 'mouse', 'admin', 'user']
 
