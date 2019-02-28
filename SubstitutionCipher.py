@@ -94,7 +94,7 @@ def map_substitution(text, char_set_source, char_set_destination):
     return deciphered_text
 
 
-enciphered_message = "jyqmyjjae waj wulzwkkv myyidwlmdj wyf ajejadjf lvgj ! lpjaj waj ei hwyv ma."
+enciphered_message = "ex el ayls xg laa kgf ayjk jkydyjxad ec xka quyecxaox el daquyjai fexk xka jgddalqgciech uaxxad ec xka jeqkad yuqkyrax. iajdsqxegc el vzlx yl ayls, rs hgech mdgt xka jeqkad yuqkyrax ryjn xg xka quyec yuqkyrax. fkac hacadyxech nasl ex el qgqzuyd xg zla y nas fgdi, a.h. 'pardy' xg hacadyxa ex, lecja ex el tzjk aylead xg datatrad y nas fgdi jgtqydai xg y dycigt vztrua gm 26 jkydyjxadl. zlech xka nasfgdi 'pardy', xka nas fgzui rajgta:"
 frequency_array = count_frequency(enciphered_message)
 print(frequency_array)
 
