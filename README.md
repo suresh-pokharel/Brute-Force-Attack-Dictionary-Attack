@@ -1,9 +1,9 @@
 # Brute Force and Dictionary Attack
-This work is done as an assignment of the subject Information Security and Audit (ISA) in MSCSKE, IOE, Pulchowk Campus
+This work is done as an assignment of the subject Information Security and Audit (ISA)
 
 ### Task-1 Description: 
-
 SecurityAttacks.py
+
 Assume that you have access to an web application to login with username and password. Assume that the api returns true on successfull login and false on failed login.
 
 
